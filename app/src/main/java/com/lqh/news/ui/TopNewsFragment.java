@@ -16,8 +16,7 @@ import com.lqh.news.presenter.TopNewsPresenter;
 public class TopNewsFragment extends BeamFragment<TopNewsPresenter> {
 
     private EasyRecyclerView easyRecyclerView;
-    public TopNewsFragment() {
-
+    public TopNewsFragment(){
     }
 
     @Override
@@ -28,7 +27,7 @@ public class TopNewsFragment extends BeamFragment<TopNewsPresenter> {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_top_news, container, false);
+        View view=View.inflate(getContext(),R.layout.fragment_top_news,null);
         easyRecyclerView = (EasyRecyclerView) view.findViewById(R.id.easy_recyclerview);
         easyRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         return view;
@@ -37,4 +36,6 @@ public class TopNewsFragment extends BeamFragment<TopNewsPresenter> {
     public EasyRecyclerView getEasyRecyclerView(){
         return easyRecyclerView;
     }
+
+
 }

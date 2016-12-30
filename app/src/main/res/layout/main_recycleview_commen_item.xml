@@ -7,7 +7,8 @@
     <android.support.v7.widget.CardView
         android:id="@+id/main_common_item_cardView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -15,9 +16,10 @@
             android:orientation="horizontal">
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/main_common_item_cardView_simdraview"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="5dp"/>
+                android:layout_width="120dp"
+                android:layout_height="85dp"
+                android:padding="3dp"
+                />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -27,23 +29,41 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
-                    android:text="宋小宝子女颜值完胜亲爹!机场偶遇林丹"/>
-                <TextView
-                    android:id="@+id/main_common_item_cardView_conent"
-                    android:layout_width="wrap_content"
+                    android:paddingBottom="3dp"
+                    android:paddingTop="3dp"
+                    android:paddingLeft="8dp"
+                    android:minLines="2"
+                    android:text="宋小宝子女颜值完胜"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/darker_gray"
-                    android:textSize="16dp"
-                    android:singleLine="true"
-                    android:text="网易娱乐12月27日报道自从参加了《爸爸去哪儿》，很多观众才知道蔡国庆原来早就隐婚，并且有一个那么大的儿子。最近他的妻子也首度曝光，关于蔡国庆私生活长达多年的各"/>
-                <TextView
-                    android:id="@+id/main_common_item_cardView_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="10dp"
-                    android:textColor="@android:color/darker_gray"
-                    android:gravity="right|bottom"
-                    android:text="12-27 08:28"/>
+                   >
+                    <TextView
+                        android:id="@+id/main_common_item_cardView_source"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16dp"
+                        android:singleLine="true"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="8dp"
+                        android:text="网易娱乐"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+                    <TextView
+                        android:id="@+id/main_common_item_cardView_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:paddingBottom="3dp"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:text="12-27 08:28"/>
+                </RelativeLayout>
+
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>

@@ -39,7 +39,7 @@ public class TopNews  {
      * ptime : 2016-12-27 12:38:34
      */
 
-    private List<NewsBean> T1348647909107;
+    private List<NewsBean> T1348647909107;//头条新闻
 
 
     public List<NewsBean> getT1348647909107() {
@@ -48,6 +48,17 @@ public class TopNews  {
 
     public void setT1348647909107(List<NewsBean> T1348647909107) {
         this.T1348647909107 = T1348647909107;
+    }
+
+
+    private List<NewsBean> T1348648517839;//娱乐
+
+    public List<NewsBean> getT1348648517839() {
+        return T1348648517839;
+    }
+
+    public void setT1348648517839(List<NewsBean> T1348648517839) {
+        this.T1348648517839 = T1348648517839;
     }
 
     public static class NewsBean {

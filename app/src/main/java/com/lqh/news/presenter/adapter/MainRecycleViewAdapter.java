@@ -1,4 +1,4 @@
-package com.lqh.news.presenter;
+package com.lqh.news.presenter.adapter;
 
 import android.content.Context;
 import android.util.Log;
@@ -34,7 +34,6 @@ public class MainRecycleViewAdapter extends RecyclerArrayAdapter<TopNews.NewsBea
         }
 
     }
-
 
     @Override
     public int getViewType(int position) {

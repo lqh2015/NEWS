@@ -27,9 +27,9 @@ public class APIStores {
     // 头条id
     public static final String HEADLINE_ID = "T1348647909107";
     // 房产id
-    public static final String HOUSE_ID = "5YyX5Lqs";
+    public static final String HOUSE_ID = "5YyX5Lqs";//page 1 3 5 8 10 13 15 18 20有数据
     // 足球
-    public static final String FOOTBALL_ID = "T1399700447917";
+//    public static final String FOOTBALL_ID = "T1399700447917";
     // 娱乐
     public static final String ENTERTAINMENT_ID = "T1348648517839";
     // 体育

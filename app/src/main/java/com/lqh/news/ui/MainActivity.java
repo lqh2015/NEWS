@@ -5,25 +5,25 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 
-import com.jude.beam.bijection.RequiresPresenter;
-import com.jude.beam.expansion.BeamBaseActivity;
 import com.lqh.news.R;
-import com.lqh.news.presenter.MainPresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-@RequiresPresenter(MainPresenter.class)
-public class MainActivity extends BeamBaseActivity<MainPresenter>
+
+public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @BindView(R.id.fab)
@@ -34,10 +34,15 @@ public class MainActivity extends BeamBaseActivity<MainPresenter>
     DrawerLayout drawer;
     @BindView(R.id.nav_view)
     NavigationView navigationView;
-    @BindView(R.id.main_viewpager)
-    ViewPager viewPager;
+//    @BindView(R.id.main_viewpager)
+//    ViewPager viewPager;
     @BindView(R.id.tablayout)
     TabLayout tabLayout;
+    @BindView(R.id.main_framelayout)
+    FrameLayout frameLayout;
+
+    private  FragmentManager manager;
+  //  private FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,11 +63,15 @@ public class MainActivity extends BeamBaseActivity<MainPresenter>
         drawer.setDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_news);
+
+        manager=getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = manager.beginTransaction();
+        NewsFragment newsFragment=new NewsFragment();
+        fragmentTransaction.replace(R.id.main_framelayout,newsFragment,"news");
+        fragmentTransaction.commit();
     }
 
-    public ViewPager getViewPager(){
-        return viewPager;
-    }
     public TabLayout getTabLayout(){
         return tabLayout;
     }
@@ -100,11 +109,26 @@ public class MainActivity extends BeamBaseActivity<MainPresenter>
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_news) {
             // Handle the camera action
+            if(tabLayout.getVisibility()==View.GONE){
+                tabLayout.setVisibility(View.VISIBLE);
+            }
+            NewsFragment newsFragment=new NewsFragment();
+            FragmentTransaction fragmentTransaction = manager.beginTransaction();
+            fragmentTransaction.replace(R.id.main_framelayout,newsFragment,"news");
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
+         //   startActivity(new Intent(this,ImageListActivity.class));
+            BeautyImgFragment beautyImgFragment=new BeautyImgFragment();
+            FragmentTransaction fragmentTransaction = manager.beginTransaction();
+            fragmentTransaction.replace(R.id.main_framelayout,beautyImgFragment,"image");
+            tabLayout.setVisibility(View.GONE);
+            fragmentTransaction.commit();
+        } else if (id == R.id.nav_video) {
+            if(tabLayout.getVisibility()==View.VISIBLE){
+                tabLayout.setVisibility(View.GONE);
+            }
 
         } else if (id == R.id.nav_manage) {
 

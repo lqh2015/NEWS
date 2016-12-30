@@ -14,11 +14,16 @@ import com.lqh.news.model.beans.TopNews;
  */
 public class MainRecCommonHolder extends BaseViewHolder<TopNews.NewsBean> {
     private SimpleDraweeView draweeView;
-    private TextView textView;
+    private TextView newsTitle;
+    private TextView newsSource;
+    private TextView newsTime;
     public MainRecCommonHolder(ViewGroup parent) {
         super(parent, R.layout.main_recycleview_commen_item);
       //  textView=$(R.id.main_item_tv);
         draweeView=$(R.id.main_common_item_cardView_simdraview);
+        newsTitle=$(R.id.main_common_item_cardView_title);
+        newsSource=$(R.id.main_common_item_cardView_source);
+        newsTime=$(R.id.main_common_item_cardView_time);
     }
 
     @Override
@@ -26,6 +31,9 @@ public class MainRecCommonHolder extends BaseViewHolder<TopNews.NewsBean> {
         super.setData(data);
       //  textView.setText(data.getTitle());
         draweeView.setImageURI(data.getImgsrc());
+        newsTitle.setText(data.getTitle());
+        newsSource.setText(data.getSource());
+        newsTime.setText(data.getPtime());
         Log.e("MainRecHeardHolder",data.getTitle());
     }
 }
