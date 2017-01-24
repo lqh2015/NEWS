@@ -36,7 +36,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.ImageListActivity"></activity>
+        <activity
+            android:name=".ui.DetailNewsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_detail_news"
+            android:theme="@style/FullscreenTheme">
+            <intent-filter>
+                <action android:name="com.lqh.news.detial" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.NewsDetialActivity"
+            android:theme="@style/anim_fade" />
+        <activity
+            android:name=".ui.ImgNewsDetialActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme" />
     </application>
 
 </manifest>

@@ -24,7 +24,7 @@ public class TopNewsPresenter extends BeamBasePresenter<TopNewsFragment> {
     protected void onCreateView(@NonNull TopNewsFragment view) {
         super.onCreateView(view);
         this.view=view;
-        topNewsModel=new TopNewsModel(this);
+       // topNewsModel=new TopNewsModel(this);
     }
 
     public void setRecycleAdapter(MainRecycleViewAdapter adapter){

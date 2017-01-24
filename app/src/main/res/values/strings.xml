@@ -9,4 +9,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="title_activity_detail_news">DetailNewsActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="news_content"><html><head>ep-title</head><body><p>ep-time 　来源: ep-source</p><p>ep-content</p><p>本文来源：ep-source</p><p>责任编辑：ep-editor</p></body></html></string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

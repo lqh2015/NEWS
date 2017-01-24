@@ -3,6 +3,7 @@ package com.lqh.news.presenter;
 import android.support.annotation.NonNull;
 
 import com.jude.beam.expansion.BeamBasePresenter;
+import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.lqh.news.model.BeautyImgModel;
 import com.lqh.news.ui.BeautyImgFragment;
@@ -23,5 +24,9 @@ public class ImageListPresenter extends BeamBasePresenter<BeautyImgFragment> {
 
     public void setRecAdapter(RecyclerArrayAdapter adapter) {
         view.getRecyclerView().setAdapter(adapter);
+    }
+
+    public EasyRecyclerView getEasyRecyclerView(){
+        return view.getRecyclerView();
     }
 }

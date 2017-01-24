@@ -1,6 +1,8 @@
 package com.lqh.news.ui;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,8 @@ import com.lqh.news.presenter.ImageListPresenter;
 public class BeautyImgFragment extends BeamFragment<ImageListPresenter> {
 
     private EasyRecyclerView recyclerView;
+    private FloatingActionButton button;
+    private static int startdy;
 
     public BeautyImgFragment(){
 
@@ -34,6 +38,28 @@ public class BeautyImgFragment extends BeamFragment<ImageListPresenter> {
         SpaceDecoration itemDecoration = new SpaceDecoration(8);//参数是距离宽度
         itemDecoration.setPaddingEdgeSide(false);
         recyclerView.addItemDecoration(itemDecoration);
+        recyclerView.setRefreshingColor(R.color.colorAccent);
+        recyclerView.setRefreshingColorResources(R.color.colorAccent);
+        button= (FloatingActionButton) view.findViewById(R.id.fab);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recyclerView.scrollToPosition(0);
+            }
+        });
+        recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if(dx<startdy){
+                    button.setVisibility(View.GONE);
+                }else{
+                    button.setVisibility(View.VISIBLE);
+                }
+                startdy=dy;
+            }
+        });
+        button.setVisibility(View.GONE);
         return view;
     }
 

@@ -26,8 +26,8 @@ public class APIStores {
 
     // 头条id
     public static final String HEADLINE_ID = "T1348647909107";
-    // 房产id
-    public static final String HOUSE_ID = "5YyX5Lqs";//page 1 3 5 8 10 13 15 18 20有数据
+//    // 房产id
+//    public static final String HOUSE_ID = "5YyX5Lqs";//page 1 3 5 8 10 13 15 18 20有数据
     // 足球
 //    public static final String FOOTBALL_ID = "T1399700447917";
     // 娱乐
@@ -86,6 +86,7 @@ public class APIStores {
     public static final String MSG_ID = "T1371543208049";
     // 军事
     public static final String MILITARY_ID = "T1348648141035";
+
     // 美女 http://c.m.163.com/recommend/getChanListNews?channel=T1456112189138&size=10&offset=0&fn=1
     public static final String BEAUTY_CHANNEL = "T1456112189138";
 
@@ -136,8 +137,8 @@ public class APIStores {
         switch (id) {
             case HEADLINE_ID:
                 return HEADLINE_TYPE;
-            case HOUSE_ID:
-                return HOUSE_TYPE;
+//            case HOUSE_ID:
+//                return HOUSE_TYPE;
             default:
                 break;
         }

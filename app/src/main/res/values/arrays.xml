@@ -2,7 +2,6 @@
 <resources>
     <string-array name="tab_title">
         <item>头条</item>
-        <item>房产</item>
         <item>娱乐</item>
         <item>体育</item>
         <item>财经</item>
@@ -26,10 +25,6 @@
         <item>博客</item>
         <item>社会</item>
         <item>家居</item>
-        <item>暴雪游戏</item>
-        <item>亲子</item>
-        <item>CBA</item>
-        <item>消息</item>
-        <item>军事</item>
+        <!--<item>军事</item>-->
     </string-array>
 </resources>
